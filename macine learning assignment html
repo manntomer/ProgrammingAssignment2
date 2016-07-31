@@ -1,0 +1,7 @@
+description of activity recognition assignment, machine learning course:
+first, i divided the data to training, testing and validation sets. their sizes, after omitting the NA activities- 199,87,and 120, respectively.
+than, i set my machine to run parallel, which considerably reduced running time.
+in training control, i decided to start with 10 fold cv, since it's out of sample error with this many folds should be very close to bootstraping, while considerably faster. had i not gotten good enough results i would have continued to try bootstraping. as it turned out, that wasn't necessary. 
+for pre-processing i considered using pca. since results were so good without it, i ended up not including it,since even thought there were 6951 predictors, of which only 12 had non-zero influence.
+for metric, roc only fits binary outcome, so sensitivity and accuracy would be the most appropriate.
+next step was fitting the model. i did so with both rf and boosting, and got the same results, with 98.5% accuracy for the testing set and 97% for the validaton set. for the sake of interpretability, i went for the boosting model as my final model.
